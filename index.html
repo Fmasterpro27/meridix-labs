@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Meridix Lab — Free Online Browser Testing & Compatibility Tool</title>
+  <meta name="description"
+    content="Meridix Lab is a free, open-source browser testing platform. Test browser permissions, JavaScript APIs, camera, microphone, vibration, HTML forms, CSS features, and device capabilities.">
+  <meta name="keywords"
+    content="Meridix Lab, browser testing, browser compatibility, browser API testing, JavaScript testing, HTML5 testing, CSS testing, browser permissions, camera test, microphone test, vibration API, open source browser tools">
+  <meta name="author" content="TheJMStudios">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#28282b">
+
+  <link rel="canonical" href="https://meridixlabs.thejmstudios.com/">
+
+  <link rel="icon" type="image/x-icon" href="/static/image/favicon.ico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Meridix Lab — Browser Testing & Compatibility Tool">
+  <meta property="og:description"
+    content="Explore, test, and benchmark browser capabilities. An open-source browser testing suite by TheJMStudios.">
+  <meta property="og:url" content="https://meridixlabs.thejmstudios.com/">
+  <meta property="og:site_name" content="Meridix Lab">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meridix Lab — Browser Testing">
+  <meta name="twitter:description"
+    content="Test browser APIs, permissions, hardware capabilities, HTML5, CSS, and JavaScript with Meridix Lab.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jost:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Meridix Lab home"><img src="/static/image/meridix.png" alt="Meridix Lab"
+        class="brand-logo"><span>Meridix <span class="muted">lab</span></span></a>
+    <nav aria-label="Main navigation"><a href="#permissions">Permissions</a><a href="#vibration">Vibration</a><a
+        href="#forms">HTML Forms</a></nav>
+    <span class="version">BROWSER TESTING</span>
+  </header>
+  <main id="top">
+    <section class="intro">
+      <div class="eyebrow"> LOCAL TESTING TOOL</div>
+      <h1>Browser capabilities,<br><span class="muted">made testable.</span></h1>
+      <p>Check browser permissions, test device vibration, and try native HTML form behavior in one place.</p>
+    </section>
+    <section class="section" id="permissions">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">01 / ACCESS</div>
+          <h2>Browser Permissions</h2>
+        </div>
+        <p>Requests happen only when you choose an action.</p>
+      </div>
+      <div class="permission-grid" id="permission-grid"></div>
+    </section>
+    <section class="section" id="vibration">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">02 / DEVICE</div>
+          <h2>Vibration API</h2>
+        </div>
+        <div class="support-label"><span class="status-dot" id="vibration-dot"></span><span
+            id="vibration-support">Checking support…</span></div>
+      </div>
+      <div class="panel vibration-panel">
+        <div>
+          <h3>Test device vibration</h3>
+          <p>Vibration depends on device hardware and browser support.</p>
+        </div>
+        <div class="button-row"><button class="button" data-vibrate="100">Vibrate 100ms</button><button class="button"
+            data-vibrate="200">Vibrate 200ms</button><button class="button" data-vibrate="500">Vibrate
+            500ms</button><button class="button" id="vibrate-pattern">Vibrate Pattern</button><button
+            class="button button-muted" id="vibrate-stop">Stop Vibration</button></div>
+      </div>
+    </section>
+    <section class="section" id="forms">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">03 / INPUT</div>
+          <h2>HTML Forms</h2>
+        </div>
+        <p>Native controls, validation, and submission.</p>
+      </div>
+      <form id="demo-form" class="form-layout" novalidate>
+        <div class="form-card">
+          <h3>Input types</h3>
+          <div class="field-grid">
+            <label>Text<input name="text" type="text" placeholder="Your name" required></label>
+            <label>Password<input name="password" type="password" placeholder="At least 6 characters" minlength="6"
+                required></label>
+            <label>Email<input name="email" type="email" placeholder="you@example.com" required></label>
+            <label>Number (1–100)<input name="number" type="number" min="1" max="100" required></label>
+            <label>Telephone<input name="telephone" type="tel" placeholder="+1 555 0100"></label>
+            <label>URL<input name="url" type="url" placeholder="https://example.com"></label>
+            <label>Search<input name="search" type="search" placeholder="Search"></label>
+            <label>Date<input name="date" type="date"></label>
+            <label>Time<input name="time" type="time"></label>
+            <label>Datetime local<input name="datetime-local" type="datetime-local"></label>
+            <label>Month<input name="month" type="month"></label>
+            <label>Week<input name="week" type="week"></label>
+            <label>Color<input name="color" type="color" value="#9da5b4"></label>
+            <label>Range <span class="range-value" id="range-value">50</span><input name="range" id="range" type="range"
+                min="0" max="100" value="50"></label>
+            <label>File<input name="file" type="file"></label>
+            <label>Pattern (5 digits)<input name="pattern" type="text" pattern="[0-9]{5}" placeholder="12345"
+                title="Enter exactly 5 digits"></label>
+            <label>Datalist<input name="browser" list="browsers" placeholder="Choose or type"><datalist id="browsers">
+                <option value="Chrome">
+                <option value="Firefox">
+                <option value="Safari">
+                <option value="Edge">
+              </datalist></label>
+            <label>Select<select name="select">
+                <option value="">Choose one</option>
+                <option>Chromium</option>
+                <option>Firefox</option>
+                <option>Safari</option>
+              </select></label>
+            <label>Multi-select<select name="multi-select" multiple size="3">
+                <option>Camera</option>
+                <option>Microphone</option>
+                <option>Geolocation</option>
+                <option>Notifications</option>
+              </select></label>
+            <label>Custom validation<input name="custom" id="custom-input" type="text"
+                placeholder="Enter the word meridix" required></label>
+          </div>
+        </div>
+        <div class="form-card">
+          <h3>Other form elements</h3>
+          <div class="field-grid">
+            <label class="full-field">Textarea<textarea name="message" rows="3"
+                placeholder="Write a message"></textarea></label>
+            <fieldset>
+              <legend>Checkbox</legend><label class="choice"><input type="checkbox" name="updates" value="yes"> Receive
+                updates</label>
+            </fieldset>
+            <fieldset>
+              <legend>Radio</legend><label class="choice"><input type="radio" name="environment" value="desktop"
+                  checked> Desktop</label><label class="choice"><input type="radio" name="environment" value="mobile">
+                Mobile</label>
+            </fieldset>
+          </div>
+          <div class="form-actions"><button class="button button-primary" type="submit">Submit form</button><button
+              class="button" type="reset">Reset form</button></div>
+        </div>
+        <div class="form-card results-card">
+          <div class="results-head">
+            <h3>Submission results</h3><span id="result-state">Waiting for submission</span>
+          </div>
+          <pre id="form-results">Submitted values will appear here.</pre>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer><span>MERIDIX LAB</span><span>Open-source browser testing</span></footer>
+  <div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="false"></div>
+  <dialog id="confirm-dialog" class="confirm-dialog">
+    <form method="dialog">
+      <div class="eyebrow">CONFIRM ACTION</div>
+      <h2 id="dialog-title">Confirm action</h2>
+      <p id="dialog-message">Are you sure?</p>
+      <div class="dialog-actions"><button class="button" value="cancel">Cancel</button><button
+          class="button button-primary" id="dialog-confirm" value="confirm">Continue</button></div>
+    </form>
+  </dialog>
+  <script src="/static/js/app.js"></script>
+</body>
+
+</html>
